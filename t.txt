@@ -1,0 +1,18 @@
+import argparse as ar
+from eventos import user, get_events
+
+parser = ar.ArgumentParser()
+
+subparse = parser.add_subparsers(dest = 'comando')
+
+get_user = subparse.add_parser("get", help = "Atividade usuario")
+get_user.add_argument("user", help='Usuario github')
+
+args = parser.parse_args()
+
+if args.comando in ['get']:
+    atividade = user(args.user)
+
+    if not atividade:
+        pass
+    usuario = get_user(atividade)

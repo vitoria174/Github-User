@@ -1,0 +1,36 @@
+import argparse as ar // import argparse
+
+parse = ar.ArgumentParser() // cria um argumento
+
+parse.add_argument('--user') // define um argumento
+
+args = parse.parse_args() // le o que o usuario digitou
+
+print(f'Usuario:{args}')
+
+
+
+import argparse as ar
+
+parse = ar.ArgumentParser()
+
+parse.add_argument('--user', required=True)
+
+args = parse.parse_args()
+
+print(f'Usuario:{args}')
+
+///////////////
+import argparse as ar
+
+parse = ar.ArgumentParser()
+
+comando = parse.add_subparsers(dest = 'comando') #cria comando
+
+add = comando.add_parser('get')
+add.add_argument('usuario', help='usuario')
+
+arg = parse.parse_args()
+
+if arg.comando == "get":
+    print('ok')
