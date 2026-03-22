@@ -19,6 +19,7 @@ def eventos(user):
         opcao= int(input("OPÇÃO: "))
 
         if opcao == 1:
+            print("Commits do usuario")
             user.CommitEvent()
         
         elif opcao == 2:
@@ -31,7 +32,7 @@ def eventos(user):
              user.ForkEvent()
 
 def main():
-    [blue]username= input("User Github: ")[/blue]
+    username= input("User Github: ")
     user = Usuario(username)
 
     if user.validacao():
